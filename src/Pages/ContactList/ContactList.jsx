@@ -10,10 +10,10 @@ const ContactList = () => {
     return(
       <main className='container rounded'>
       <div className='row'>
-        <div className='col-4'>
+        <div className='col-3'>
           <Sidebar/>
         </div>
-        <div className='col-8'>
+        <div className='col-9'>
           <ContactItem/>
         </div>
       </div>
