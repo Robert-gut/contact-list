@@ -2,12 +2,16 @@
 import './NewContact.css'
 
 //valid
-import * as Yup from 'yup'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
+import {validationSchema} from '../../Componets/validation/Validation'
 
 // for id
 import {v4 as uuidv4} from 'uuid'
+
+//router-dom
 import { useNavigate } from 'react-router-dom'
+
+//validation
 
 
 const NewContact = () => {
@@ -21,16 +25,6 @@ const NewContact = () => {
       status: '',
       favorite: ''
     }
-
-    const validationSchema = Yup.object().shape({
-      name: Yup.string().required('Name is required'),
-      phone: Yup.string().required('Phone is required'),
-      email: Yup.string().email('Invalid email').required('Email is required'),
-      avatar: Yup.string().url('Invalid URL').required('Avatar is required'),
-      gender: Yup.string().oneOf(['Men', 'Women'],'Invalid gender').required('Gender is required'),
-      status: Yup.string().oneOf(['Work', 'Family','Private', 'Friends'],'Status gender').required('Status is required'),
-      favorite: Yup.boolean()
-    })
 
     const navigate = useNavigate();
     const handleSubmit = (values) => {
