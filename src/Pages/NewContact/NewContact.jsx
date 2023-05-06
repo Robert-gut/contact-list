@@ -5,7 +5,9 @@ import './NewContact.css'
 import * as Yup from 'yup'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
+// for id
 import {v4 as uuidv4} from 'uuid'
+import { useNavigate } from 'react-router-dom'
 
 
 const NewContact = () => {
@@ -30,72 +32,69 @@ const NewContact = () => {
       favorite: Yup.boolean()
     })
 
+    const navigate = useNavigate();
     const handleSubmit = (values) => {
       console.log(values);
-    }
+      navigate('/');
+    };
 
 
 
     return(
       <div className='container'>
-          <div className="modal-content rounded addPage shadow-sm">
-
-            <h1 className="text-center">Add new contact</h1>
+          <div className="rounded addPage shadow-lg">
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
-              {({isSubmitting}) => (
-                <Form>
-                  <div>
-                    <label htmlFor='name'>Name</label>
-                    <Field type='text' name='name' />
-                    <ErrorMessage name='name' />
+              {({isSubmitting }) => (
+                <Form >
+                  <h1 className="text-center">Add new contact</h1>
+                  <hr />
+                  <div className='m-4'>
+                    <Field className="form-control fs-5" placeholder='Name' type='text' name='name' />
+                    <ErrorMessage component="p" className='text-danger position-absolute' name='name' />
                   </div>
 
-                  <div>
-                    <label htmlFor='phone'>Phone</label>
-                    <Field type='text' name='phone' />
-                    <ErrorMessage  name='phone' />
+                  <div className='m-4'>
+                    <Field className="form-control fs-5" placeholder='Phone' type='text' name='phone' />
+                    <ErrorMessage component="p" className='text-danger position-absolute'  name='phone' />
                   </div>
 
-                  <div>
-                    <label htmlFor='email'>Email</label>
-                    <Field type='text' name='email' />
-                    <ErrorMessage name='email' />
+                  <div className='m-4'>
+                    <Field className="form-control fs-5" placeholder='Email' type='text' name='email' />
+                    <ErrorMessage component="p" className='text-danger position-absolute' name='email' />
                   </div>
 
-                  <div>
-                    <label htmlFor='avatar'>Avatar</label>
-                    <Field type='text' name='avatar' />
-                    <ErrorMessage name='avatar' />
+                  <div className='m-4'>
+                    <Field className="form-control fs-5" placeholder='Avatar' type='text' name='avatar' />
+                    <ErrorMessage component="p" className='text-danger position-absolute' name='avatar' />
                   </div>
 
-                  <div>
-                    <label htmlFor='gender'>Gender</label>
-                    <Field as='select' name='gender' >
+                  <div className='m-4'>
+                    <Field className="form-control fs-5"  as='select' name='gender' >
                       <option value=''>Choose gender</option>
                       <option value='Men'>Men</option>
                       <option value='Women'>Women</option>
                     </Field>
-                    <ErrorMessage name='gender' />
+                    <ErrorMessage component="p" className='text-danger position-absolute' name='gender' />
                   </div>
 
-                  <div>
-                    <label htmlFor='status'>Status</label>
-                    <Field as='select' name='status' >
+                  <div className='m-4'>
+                    <Field className="form-control fs-5" as='select' name='status' >
                       <option value=''>Choose status</option>
                       <option value='Work'>Work</option>
                       <option value='Family'>Family</option>
                       <option value='Private'>Private</option>
                       <option value='Friends'>Friends</option>
                     </Field>
-                    <ErrorMessage name='status' />
+                    <ErrorMessage component="p" className='text-danger position-absolute' name='status' />
                   </div>
-
-                  <div>
-                    <label htmlFor='favorite'>Favorite</label>
-                    <Field type='checkbox' name='favorite' />
+                  <div className='m-4 fs-5'>
+                    <Field className='form-check-input m-1' type='checkbox' name='favorite' />
+                    <label className='form-check-label' htmlFor='favorite'>Favorite</label>
                   </div>
-
-                  <button type='submit' className="btn btn-primary btn-lg" disabled={isSubmitting}>Add</button>
+                  
+                  <div className='m-4'>
+                  <button type='submit' className="btn btn-primary btn-lg form-control" disabled={isSubmitting}>Add</button>
+                  </div>
                 </Form>
               )}
             </Formik>
