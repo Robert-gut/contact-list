@@ -3,7 +3,7 @@ import './NewContact.css'
 
 //valid
 import { Formik, Form, Field, ErrorMessage } from 'formik'
-import {validationSchema} from '../../Componets/validation/Validation'
+import {validationSchema} from '../../validation/Validation'
 
 // for id
 import {v4 as uuidv4} from 'uuid'
@@ -94,7 +94,6 @@ const NewContact = () => {
             </Formik>
           </div>
       </div>
-
 
     )
 }
