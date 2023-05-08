@@ -6,7 +6,7 @@ import Sidebar from '../../Componets/Sidebar/Sidebar'
 import ContactItem from '../../Componets/ContactItem/ContactItem'
 
 
-const ContactList = () => {
+const ContactList = ({ stor }) => {
     return(
       <main className='container rounded'>
       <div className='row'>
@@ -14,7 +14,7 @@ const ContactList = () => {
           <Sidebar/>
         </div>
         <div className='col-9'>
-          <ContactItem/>
+          <ContactItem stor={stor}/>
         </div>
       </div>
     </main>

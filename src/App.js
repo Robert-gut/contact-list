@@ -10,13 +10,23 @@ import UpdateContact from "./Pages/UpdateContact/UpdateContact"
 import NotFound from "./Pages/NotFound/NotFound"
 import Header from "./Componets/Header/Header" 
 
+//import hooks
+import { useState } from 'react'
+ 
 function App() {
+
+  const [stor, setStor] = useState([{avatar: "//fgjh.fgjh", email: "gh@cg.df", favorite: true, gender: "Men", id: "5b590c20-239d-4bb8-aec5-9ae4ad33e567", name: "Test", phone:  "+38 0354908689",status: "Family"}])
+  const handleNewContact = (newContact) =>{
+    setStor(prevStor => [...prevStor, newContact])
+    console.log(stor);
+  }
+
   return (
     <Router>
       <Header/>
       <Routes>
-        <Route path="/" element={<ContactList/>}/>
-        <Route path="/new-contact" element={<NewContact/>}/>
+        <Route path="/" element={<ContactList stor={stor}/>}/>
+        <Route path="/new-contact" element={<NewContact onNewContact={handleNewContact}/>}/>
         <Route path="/update-contact" element={<UpdateContact/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>

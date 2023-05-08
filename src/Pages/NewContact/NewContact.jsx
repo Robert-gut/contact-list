@@ -14,7 +14,7 @@ import { useNavigate } from 'react-router-dom'
 //validation
 
 
-const NewContact = () => {
+const NewContact = ({onNewContact}) => {
     const initialValues = {
       id: uuidv4(),
       name: '',
@@ -27,8 +27,10 @@ const NewContact = () => {
     }
 
     const navigate = useNavigate();
+
     const handleSubmit = (values) => {
       console.log(values);
+      onNewContact(values)
       navigate('/');
     };
 
