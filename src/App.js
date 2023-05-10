@@ -15,7 +15,7 @@ import { useState } from 'react'
  
 function App() {
 
-  const [stor, setStor] = useState([{avatar: "//fgjh.fgjh", email: "gh@cg.df", favorite: true, gender: "Men", id: "5b590c20-239d-4bb8-aec5-9ae4ad33e567", name: "Test", phone:  "+38 0354908689",status: "Family"}])
+  const [stor, setStor] = useState([{avatar: "40", email: "gh@cg.df", favorite: true, gender: "men", id: "5b590c20-239d-4bb8-aec5-9ae4ad33e567", name: "Test", phone:  "+38 0354908689",status: "Family"}])
   const handleNewContact = (newContact) =>{
     setStor(prevStor => [...prevStor, newContact])
     console.log(stor);

@@ -6,7 +6,7 @@ const ContactItem = ({ stor }) => {
         <div>
             {stor.map((contact) => (
                 <div key={contact.id}>
-                    <img src={contact.avatar} alt="avatar" />
+                    <img src={`https://randomuser.me/api/portraits/${contact.gender}/${contact.avatar}.jpg`} alt="avatar" />
                     <div>
                         <h3>{contact.name}</h3>
                         <p>{contact.email}</p>

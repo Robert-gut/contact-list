@@ -60,15 +60,15 @@ const NewContact = ({onNewContact}) => {
                   </div>
 
                   <div className='m-4'>
-                    <Field className="form-control fs-5" placeholder='Avatar' type='text' name='avatar' />
+                    <Field className="form-control fs-5" placeholder='Avatar' type='number' name='avatar' min={0} max={99}/>
                     <ErrorMessage component="p" className='text-danger position-absolute' name='avatar' />
                   </div>
 
                   <div className='m-4'>
                     <Field className="form-control fs-5"  as='select' name='gender' >
                       <option value=''>Choose gender</option>
-                      <option value='Men'>Men</option>
-                      <option value='Women'>Women</option>
+                      <option value='men'>Men</option>
+                      <option value='women'>Women</option>
                     </Field>
                     <ErrorMessage component="p" className='text-danger position-absolute' name='gender' />
                   </div>
