@@ -1,18 +1,7 @@
 import './Sidebar.css'
 
 
-const Sidebar = ({ stor }) => {
-  const statusCounts = {
-    Work: 0,
-    Family: 0,
-    Private: 0,
-    Friends: 0,
-  };
-
-  stor.forEach((contact) => {
-    statusCounts[contact.status] += 1;
-  });
-  const totalContacts = stor.length;
+const Sidebar = () => {
 
     return(
       <aside className='container border-end'>
@@ -21,24 +10,24 @@ const Sidebar = ({ stor }) => {
           
             <div className="contacts-labels">
               <div className="title">
-                All contacts<span>{totalContacts}</span>
+                All contacts<span>10</span>
               </div>
               <div className="list">
                 <div className="unit">
                   <div className="lab lab-success">Work</div>
-                  <span>{statusCounts.Work}</span>
+                  <span>7</span>
                 </div>
                 <div className="unit">
                   <div className="lab lab-primary">Family</div>
-                  <span>{statusCounts.Family}</span>
+                  <span>1</span>
                 </div>
                 <div className="unit">
                   <div className="lab lab-danger">Private</div>
-                  <span>{statusCounts.Private}</span>
+                  <span>3</span>
                 </div>
                 <div className="unit">
                   <div className="lab lab-warning">Friends</div>
-                  <span>{statusCounts.Friends}</span>
+                  <span>5</span>
                 </div>
               </div>
             </div>
