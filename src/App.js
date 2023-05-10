@@ -29,8 +29,7 @@ function App() {
     <Router>
       <Header/>
       <Routes>
-        <Route path="/" element={<ContactList stor={stor} onDeleteContact={deleteContact} />
-}/>
+        <Route path="/" element={<ContactList stor={stor} onDeleteContact={deleteContact} />}/>
         <Route path="/new-contact" element={<NewContact onNewContact={handleNewContact}/>}/>
         <Route path="/update-contact" element={<UpdateContact/>}/>
         <Route path="*" element={<NotFound/>}/>

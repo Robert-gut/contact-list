@@ -11,7 +11,7 @@ const ContactList = ({ stor, onDeleteContact }) => {
       <main className='container rounded'>
       <div className='row'>
         <div className='p-0 col-3'>
-          <Sidebar />
+          <Sidebar stor={stor}/>
         </div>
         <div className='p-0 col-9'>
           <ContactItem  stor={stor} onDeleteContact={onDeleteContact}/>

@@ -11,7 +11,7 @@ import {v4 as uuidv4} from 'uuid'
 //router-dom
 import { useNavigate } from 'react-router-dom'
 
-//validation
+
 
 
 const NewContact = ({onNewContact}) => {

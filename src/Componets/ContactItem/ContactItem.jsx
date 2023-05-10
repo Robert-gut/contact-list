@@ -8,7 +8,7 @@ const ContactItem = ({ stor, onDeleteContact }) => {
 
     const handleDeleteContact = (id) => {
     onDeleteContact(id);
-  };
+    };
 
     return(
         <div>
