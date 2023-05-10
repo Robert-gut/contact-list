@@ -2,7 +2,11 @@ import './ContactItem.css'
 
 import { Link } from "react-router-dom"
 
-const ContactItem = ({ stor }) => {
+const ContactItem = ({ stor, onDeleteContact }) => {
+
+  const handleDeleteContact = (id) => {
+    onDeleteContact(id)
+  }
 
     return(
         <div>
@@ -32,7 +36,7 @@ const ContactItem = ({ stor }) => {
                       </div>
                       <div className='col-3'>
                         <Link to="/update-contact"><button>edit</button></Link>
-                        <button >delete</button>
+                        <button onClick={() => handleDeleteContact(contact.id)}>delete</button>
                       </div>    
                     </div>
                 </div>
