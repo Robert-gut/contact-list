@@ -6,7 +6,7 @@ import Sidebar from '../../Componets/Sidebar/Sidebar'
 import ContactItem from '../../Componets/ContactItem/ContactItem'
 
 
-const ContactList = ({ stor }) => {
+const ContactList = ({ stor, onDeleteContact }) => {
     return(
       <main className='container rounded'>
       <div className='row'>
@@ -14,7 +14,7 @@ const ContactList = ({ stor }) => {
           <Sidebar />
         </div>
         <div className='p-0 col-9'>
-          <ContactItem  stor={stor}/>
+          <ContactItem  stor={stor} onDeleteContact={onDeleteContact}/>
         </div>
       </div>
     </main>

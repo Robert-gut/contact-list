@@ -21,11 +21,16 @@ function App() {
     console.log(stor);
   }
 
+  const deleteContact = (id) => {
+    setStor(prevStor => prevStor.filter(contact => contact.id !== id))
+  }
+
   return (
     <Router>
       <Header/>
       <Routes>
-        <Route path="/" element={<ContactList stor={stor}/>}/>
+        <Route path="/" element={<ContactList stor={stor} onDeleteContact={deleteContact} />
+}/>
         <Route path="/new-contact" element={<NewContact onNewContact={handleNewContact}/>}/>
         <Route path="/update-contact" element={<UpdateContact/>}/>
         <Route path="*" element={<NotFound/>}/>
