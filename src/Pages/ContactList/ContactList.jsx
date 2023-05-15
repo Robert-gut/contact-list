@@ -2,7 +2,7 @@
 import './ContactList.css'
 
 //import components
-// import Sidebar from '../../Componets/Sidebar/Sidebar'
+import Sidebar from '../../Componets/Sidebar/Sidebar'
 import ContactItem from '../../Componets/ContactItem/ContactItem'
 
 
@@ -11,7 +11,7 @@ const ContactList = () => {
       <main className='container rounded'>
       <div className='row'>
         <div className='col-3'>
-          {/* <Sidebar/> */}
+          <Sidebar/>
         </div>
         <div className='col-9'>
           <ContactItem/>

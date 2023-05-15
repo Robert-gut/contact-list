@@ -1,7 +1,10 @@
 import './Sidebar.css'
 
+import { useSelector } from 'react-redux';
 
-const Sidebar = ({ stor }) => {
+
+const Sidebar = () => {
+    const contacts = useSelector((state)=> state.contacts)
 
     const statusContact = {
       Work:0,
@@ -10,11 +13,11 @@ const Sidebar = ({ stor }) => {
       Friends:0
     }
 
-    stor.forEach(contact => {
+    contacts.forEach(contact => {
       statusContact[contact.status] += 1
     });
 
-    const allContacts = stor.length
+    const allContacts = contacts.length
 
     return(
       <aside className='container border-end'>

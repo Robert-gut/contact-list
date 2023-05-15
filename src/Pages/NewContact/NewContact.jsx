@@ -1,3 +1,7 @@
+//import hooks
+import { useDispatch } from 'react-redux'
+import { addContact } from '../../redux/actions'
+
 //css
 import './NewContact.css'
 
@@ -14,7 +18,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 
-const NewContact = ({onNewContact}) => {
+const NewContact = () => {
     const initialValues = {
       id: uuidv4(),
       name: '',
@@ -27,10 +31,11 @@ const NewContact = ({onNewContact}) => {
     }
 
     const navigate = useNavigate();
+    const dispatch = useDispatch()
 
     const handleSubmit = (values) => {
       console.log(values);
-      onNewContact(values)
+      dispatch(addContact(values))
       navigate('/');
     };
 
