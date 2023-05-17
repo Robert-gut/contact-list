@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ContactList/>}/>
           <Route path="/new-contact" element={<NewContact/>}/>
-          <Route path="/update-contact" element={<UpdateContact/>}/>
+          <Route path="/update-contact/:id" element={<UpdateContact/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </Router>
